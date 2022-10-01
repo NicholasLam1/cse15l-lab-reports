@@ -38,10 +38,10 @@ to copy over the file. After entering the password to login, I used javac to com
 This shows the output of running:
 > ssh-keygen 
 
-in the terminal. The command first prompts which file to save the key which I hit enter to specify the default path. When asked to enter a passphrase I left it empty. The next step was to copy the public key to the .ssh directory of my user account on the server which was accomplished using 
+in the terminal. The command first prompts which file to save the key which I hit enter to specify the default path. When asked to enter a passphrase I left it empty. The next step was to copy the public key to the .ssh directory of my user account on the server which was accomplished using: 
 >mkdir .ssh 
 
-Then back on the client i used: 
+Then back on the client I used: 
 >scp /Users/n2lam/.ssh/id_rsa.pub n2lam@ieng6.ucsd.edu:~/.ssh/authorized_keys
 
  ![Image](https://raw.githubusercontent.com/NicholasLam1/cse15l-lab-reports/main/lab1pic6.png)
@@ -52,11 +52,11 @@ Then back on the client i used:
 
 ![Image](https://raw.githubusercontent.com/NicholasLam1/cse15l-lab-reports/main/lab1pic7.png)
 
-This shows the reuslt of running the command
+This shows the result of running the command:
 
 >  cp WhereAmI.java OtherMain.java; javac OtherMain.java; java WhereAmI
 
-This line was able to run multiple commands at once as a semicolon sperated each command. In addition, hitting the  up-arrow on the keyboard shows previous command run which makes it faster to repeat earlier commands. 
+This line was able to run multiple commands at once as a semicolon separated each command. In addition, hitting the up-arrow on the keyboard shows previous command run which makes it faster to repeat earlier commands. 
 
 
 
