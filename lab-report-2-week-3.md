@@ -2,7 +2,7 @@
 
 ## Part 1 
 
-Below is my code for SearchEngine.java. It uses Arraylists for its data structures. 
+Below is my code for SearchEngine.java. It uses ArrayLists for its data structures. 
 ```
 import java.io.IOException;
 import java.net.URI;
@@ -65,10 +65,9 @@ Here are the results of adding "pineapple" and "apple", and then searching for "
 ![Image](https://raw.githubusercontent.com/NicholasLam1/cse15l-lab-reports/main/lab2pic2.png)
 
 
-
 ![Image](https://raw.githubusercontent.com/NicholasLam1/cse15l-lab-reports/main/lab2pic3.png)
 
-The methods that are called when /add?=pineapple is the input are getQuery(), split(), equals(), and add(). These methods together read the query and extracts the string to be added and then adds it to a list that keeps track of all of the strings. The relevant argument in split() is "=" and for equals() is "s". If parameters[0] is equal to "s", then it is added to the list by list.add() with parameters[1] as its argument. The value of parameters[1] can vary. As seen in the second screenshot, when /add?=apple is the input, all the same methods as before are called. The only difference is that the value of parameters[1] is now apple instead of pineapple. Also, since pineapple was added first, apple would be the second element in the list. The methods that are called when /search?s=app is the input are getQuery(), split(), equals(), size(), indexOf(), add(), and get(). These methods together read the substring to be searched and then goes through the list of existing strings and returns which strings have that exact substring. The getQuery(), split(), and equals() method have the same arguments when adding a string. The size method is used to get the size of the list in order to transverse it. In the for loop, get(i) refers to the i-th element in the list and indexOf() is used to see if the element in the list has the substring and the relevant argument is parameters[1]. If the string does contain the substring it is added to another list called match using add() with list.get(i) as the argument. parameters[1] can vary and corresponds to the different substring that is being searched for within the strings. 
+The methods that are called when /add?=pineapple is the input are getQuery(), split(), equals(), and add(). These methods together read the query and extracts the string to be added and then adds it to a list that keeps track of all of the strings. The relevant argument in split() is "=" and for equals() is "s". If parameters[0] is equal to "s", then it is added to the list by list.add() with parameters[1] as its argument. The value of parameters[1] can vary. As seen in the second screenshot, when /add?=apple is the input, all the same methods as before are called. The only difference is that the value of parameters[1] is now apple instead of pineapple. Also, since pineapple was added first, apple would be the second element in the list. The methods that are called when /search?s=app is the input are getQuery(), split(), equals(), size(), indexOf(), add(), and get(). These methods together read the substring to be searched and then goes through the list of existing strings and returns which strings have that exact substring. The getQuery(), split(), and equals() method have the same arguments from before when adding a string. The size method is used to get the size of the list in order to transverse it. In the for loop, get(i) refers to the i-th element in the list and indexOf() is used to see if the element in the list has the substring and the relevant argument is parameters[1]. If the string does contain the substring it is added to another list called match using add() with list.get(i) as the argument. parameters[1] can vary and corresponds to the different substring that is being searched for within the strings. 
 
 
 ## Part 2
@@ -107,7 +106,7 @@ and the symptom for the bug in the filter() method in the ListExamples.java file
 
 ![Image](https://raw.githubusercontent.com/NicholasLam1/cse15l-lab-reports/main/lab2pic5.png)
 
-The input of an List with values of "abc", "abcd", and "abcdefghi" when gone through the filter method has the  symptom of returning the wrong order of the expected output. The filter should allow only strings less than 5 characters to pass, so the order of the output should be abc then abcd, the it was actual abcd then abc. 
+The input of an List with values of "abc", "abcd", and "abcdefghi" when gone through the filter method has the  symptom of returning the wrong order of the expected output. The filter should allow only strings less than 5 characters to pass, so the order of the output should be abc then abcd, but the actual output was abcd then abc. 
 
 ```
 static List<String> filter(List<String> list, StringChecker sc) {
@@ -121,4 +120,4 @@ static List<String> filter(List<String> list, StringChecker sc) {
   }
 ```
 
-The code above fixes the bug. The reason the bug caused that specific symptom is because the strings were added to the 0th position of the list. In other words, after checking the strings, the method would add the string to the beginning of the list which inadvertently reversed the order. My fix changes the way the strings are added so that it adds to the end of the list. This perseveres the order of the original list. 
+The code above fixes the bug. The reason the bug caused that specific symptom is because the strings were added to the 0th position of the list. In other words, after checking the strings, the method would add the string to the beginning of the list which inadvertently reversed the order. My fix changes the way the strings are added so that it adds the string to the end of the list. This perseveres the order of the original list. 
