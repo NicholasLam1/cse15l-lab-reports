@@ -60,10 +60,16 @@ class SearchEngine {
 Here are the results of adding "pineapple" and "apple", and then searching for "app".
 
 ![Image](https://raw.githubusercontent.com/NicholasLam1/cse15l-lab-reports/main/lab2pic1.png)
+
+
 ![Image](https://raw.githubusercontent.com/NicholasLam1/cse15l-lab-reports/main/lab2pic2.png)
+
+
+
 ![Image](https://raw.githubusercontent.com/NicholasLam1/cse15l-lab-reports/main/lab2pic3.png)
 
 The methods that are called when /add?=pineapple is the input are getQuery(), split(), equals(), and add(). These methods together read the query and extracts the string to be added and then adds it to a list that keeps track of all of the strings. The relevant argument in split() is "=" and for equals() is "s". If parameters[0] is equal to "s", then it is added to the list by list.add() with parameters[1] as its argument. The value of parameters[1] can vary. As seen in the second screenshot, when /add?=apple is the input, all the same methods as before are called. The only difference is that the value of parameters[1] is now apple instead of pineapple. Also, since pineapple was added first, apple would be the second element in the list. The methods that are called when /search?s=app is the input are getQuery(), split(), equals(), size(), indexOf(), add(), and get(). These methods together read the substring to be searched and then goes through the list of existing strings and returns which strings have that exact substring. The getQuery(), split(), and equals() method have the same arguments when adding a string. The size method is used to get the size of the list in order to transverse it. In the for loop, get(i) refers to the i-th element in the list and indexOf() is used to see if the element in the list has the substring and the relevant argument is parameters[1]. If the string does contain the substring it is added to another list called match using add() with list.get(i) as the argument. parameters[1] can vary and corresponds to the different substring that is being searched for within the strings. 
+
 
 ## Part 2
 
@@ -92,6 +98,7 @@ static double averageWithoutLowest(double[] arr) {
 ```
 
 The code above fixes the bug. The reason the bug caused that specific symptom is because the input had the lowest value twice in the array. The program would add all the values in the array that were not the lowest which works fine if there is only one lowest value. The failure inducing input had two 1.0 values and instead of only one, both of them were not added into the sum. My fix adds all the elements in the array and then subtracts the lowest value from the sum to remove only a singular lowest value. 
+
 
 
 
