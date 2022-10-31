@@ -1,26 +1,37 @@
 # Lab Report 3 
 
-I chose to explre the grep command.
-The first command-line option would be -c which prints only the count of the lines that match a pattern.
+**I chose to explore the grep command.**
 
+
+The first command-line option would be -c which prints only the count of the lines that match a pattern.
+ 
+
+(The find-results.txt file contains the output of running find technical/)
 ```
 [cs15lfa22ln@ieng6-202]:docsearch:124$ grep -c ".txt" find-results.txt
 1391
 ```
+This is finding all instances of .txt in the directory and returns how many times it finds it. This is useful as a way to see how many .txt files there are. 
+
 
 ```
 [cs15lfa22ln@ieng6-202]:docsearch:128$ grep -c "/plos" find-results.txt
 253
 ```
+This is finding all instances of /plos in the directory and returns how many times it finds it. This is useful as a way to see how many files there are under the plos subdirectory. 
+
 ```
 [cs15lfa22ln@ieng6-202]:docsearch:127$ grep -c "legal" find-results.txt
 5
 ```
+This is finding all instances of legal in the directory and returns how many times it finds it. This is useful as a way to see how many files have the name legal in in them. 
+
+
 
 The second command-line option would be -i which ignores case for matching.
 
-```
 
+```
 [cs15lfa22ln@ieng6-202]:docsearch:141$ grep -i "bMi" technical/biomed/1468-6708-3-1.txt
         between body mass index (BMI) and mortality, controlling
         excess risk for persons with very low BMI, but that persons
@@ -55,6 +66,7 @@ The second command-line option would be -i which ignores case for matching.
           et al proposed a desirable BMI of
         BMI Body mass index
 ```
+This is searching through the contents of the technical/biomed/1468-6708-3-1.txt file for any instances of BMI regardless of case. This is useful since it can search for the acronym even if the user forgets to capitalize some of the letters. 
 
 ```
 [cs15lfa22ln@ieng6-202]:docsearch:142$ grep -i "eVgfP" technical/biomed/1468-6708-3-1.txt
@@ -70,13 +82,19 @@ The second command-line option would be -i which ignores case for matching.
         EVGFP Is your health excellent, very good, good, fair or
 ```
 
+This is searching through the contents of the technical/biomed/1468-6708-3-1.txt file for any instances of EVGFP regardless of case. This is useful since it can search for the acronym even if the user forgets to capitalize some of the letters. 
+
 ```
 [cs15lfa22ln@ieng6-202]:docsearch:144$ grep -i "Cesd" technical/biomed/1468-6708-3-1.txt
           depression (CESD score), serum albumin, serum
         CESD Center for Epidemiologic Studies Depression
 ```
+This is searching through the contents of the technical/biomed/1468-6708-3-1.txt file for any instances of CESD regardless of case. This is useful since it can search for the acronym even if the user forgets to capitalize some of the letters.  
+
+
 
 The third command-line option would be -n which displays the matched lines and their line numbers.
+
 
 ```
 [cs15lfa22ln@ieng6-202]:docsearch:150$ grep -n "impact" technical/plos/journal.pbio.0020001.txt
@@ -89,6 +107,8 @@ The third command-line option would be -n which displays the matched lines and t
 203:        areas of concern that are having a proportionally greater scientific and social impact upon
 226:        target the journals that have the greatest impact. Although there may still be a long road
 ```
+
+This is searching through the contents of the technical/plos/journal.pbio.0020001.txt file for any instances of impact and prints out which line it came from and the corresponding line. This is useful since it can pinpoint where in the text that specific word is located. 
 
 ```
 [cs15lfa22ln@ieng6-202]:docsearch:152$ grep -n "science" technical/plos/journal.pbio.0020001.txt
@@ -110,8 +130,12 @@ The third command-line option would be -n which displays the matched lines and t
 224:        to the sciences will be an excellent investment by developing nations in terms of
 ```
 
+This is searching through the contents of the technical/plos/journal.pbio.0020001.txt file for any instances of science and prints out which line it came from and the corresponding line. This is useful since it can pinpoint where in the text that specific word is located. The number of the lines the word is located can also give a sense of the distribution of the word in the article.
+
 ```
 [cs15lfa22ln@ieng6-202]:docsearch:153$ grep -n "biodiversity" technical/plos/journal.pbio.0020001.txt
 200:        Climate change and biodiversity research, for example, urgently need the scientific input
 213:            Climate change and biodiversity research urgently need the scientific
 ```
+
+This is searching through the contents of the technical/plos/journal.pbio.0020001.txt file for any instances of biodiversity and prints out which line it came from and the corresponding line. This is useful since it can pinpoint where in the text that specific word is located and how many lines. 
