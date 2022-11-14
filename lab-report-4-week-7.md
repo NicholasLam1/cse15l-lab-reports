@@ -4,7 +4,9 @@
 
 I chose the task of Changing the name of the *start* parameter and its uses to *base*
 
+```
 /start<Enter> ce base<Esc> n . n . :wq<Enter>
+```
 
 ![Image](https://raw.githubusercontent.com/NicholasLam1/cse15l-lab-reports/main/lab4pic1.png)
 
