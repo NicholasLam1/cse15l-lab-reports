@@ -29,14 +29,11 @@ fi
 
 java -cp .:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples > out3.txt 2> err3.txt
 
-if [grep EE out3.txt]
-then
+if [ grep EE out3.txt ]; then
     echo "Failed. Score: 0"
-elif [grep .E out3.txt]
-then
+elif [ grep .E out3.txt ]; then
     echo "Pass. Score: 1"
-elif [grep E. out3.txt]
-then
+elif [ grep E. out3.txt ]; then
     echo "Pass. Score: 1"
 else
     echo "Pass. Score: 2"
@@ -64,4 +61,4 @@ For the first if statement:
 
 The condition is false since there does not exist a file named "ListExamples.java" anywhere in the directory. 
 Since the condition is false, it runs echo "Failed. Your submission should have a file named ListExamples.java" and then exit.
-Due to this early exit, lines 15-38 never run.
+Due to this early exit, the remaining lines after this if-statement never run.
